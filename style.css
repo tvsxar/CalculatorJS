@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: 500;
+    user-select: none
+}
+
+body {
+    background: #515151;
+}
+
+.container {
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator {
+    background: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.input {
+    max-width: 300px;
+    width: 100%;
+    height: 80px;
+    text-align: right;
+    color: #fff;
+    font-size: 45px;
+    flex: 1;
+    box-shadow: none;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+.buttons {
+    text-align: center;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.number {
+    color: #fff;
+    background: #4e4e4e;
+}
+
+.operation {
+    background: #4e4e4e;
+}
+
+.btn {
+    border: 0;
+    outline: 0;
+    height: 60px;
+    width: 60px;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+
+    position: relative;
+}
+
+.btn:hover {
+    opacity: 50%;
+}
+
+.btn:active {
+    top: 1px;
+}
+
+.action {
+    /* color: #bb86fc; */
+    color: #2f9fff;
+}
+
+.equal {
+    background: #2f9fff;
+    color: white;
+    grid-column: 3 / -1;
+    width: 100%;
+}
+
+label {
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switcher {
+    position: absolute;
+    opacity: 0;
+}
+
+.sun {
+    position: absolute;
+    font-size: 1em;
+    color: #666;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
+    transform: scale(0);
+    transition: 1s ease;
+    z-index: 2;
+}
+
+.switcher:checked~.sun {
+    transition-delay: .8s;
+    transform: scale(1) rotate(360deg);
+}
+
+.moon {
+    color: #666;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,.5));
+    z-index: 2;
+    transition: 1s ease;
+    transition-delay: .8s;
+}
+
+.switcher:checked~.moon {
+    transform: rotate(360deg) scale(0);
+    transition-delay: 0s;
+}
+
+.toggle {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #2b2b2b;
+    border-radius: 50%;
+    box-shadow: 
+        inset 0 8px 60px rgba(0, 0, 0, .1),
+        inset 0 8px 8px rgba(0, 0, 0, .1),
+        inset 0 -4px 4px rgba(0, 0, 0, .1);
+    z-index: 1;
+    transition: 1s;
+}
+
+.switcher:checked~.toggle {
+    background: #ffffff;
+}
+
+.day-body {
+    background: #eee;
+}
+
+.day-theme {
+    background: #fff;
+}
+
+.day-number {
+    color: #000;
+    background: #eee;
+}
+
+.day-operation {
+    background: #eee;
+}
+
+.day-input {
+    color: #000;
+}
